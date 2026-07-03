@@ -1,0 +1,5 @@
+# Configuração do GitHub Pages
+theme: jekyll-theme-dark-minimal
+title: Dashboard Operacional SP
+description: Mapa interativo de regiões de São Paulo
+show_downloads: false

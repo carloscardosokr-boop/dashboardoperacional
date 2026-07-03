@@ -1,0 +1,9 @@
+PySide6
+folium
+geopandas
+pandas
+pyogrio
+requests
+playwright
+six>=1.17.0
+Jinja2>=3.0
