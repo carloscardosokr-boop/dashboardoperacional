@@ -1,77 +1,460 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Frete por Filial</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .kpi-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+        }
+        .kpi-card h3 {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .kpi-card .value {
+            color: #333;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .kpi-card .value.highlight {
+            color: #667eea;
+        }
+        .chart-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .chart-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .chart-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        .add-data-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .add-data-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .close {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            font-size: 35px;
+            font-weight: bold;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .close:hover {
+            color: #333;
+        }
+        .modal-content h2 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard Logístico</h1>
+        
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <h3>Total CT-e</h3>
+                <div class="value">8.234</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Frete</h3>
+                <div class="value highlight">R$ 10.785.851,43</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Peso</h3>
+                <div class="value">11.721.368 Kg</div>
+            </div>
+            <div class="kpi-card">
+                <h3>Mercadoria</h3>
+                <div class="value highlight">R$ 341.902.275,84</div>
+            </div>
+        </div>
 
-{% block conteudo %}
+        <div class="chart-container">
+            <h2 class="chart-title">Gráfico de Frete</h2>
+            <p class="chart-subtitle">Frete por Filial - JUNHO</p>
+            <canvas id="freteChart"></canvas>
+        </div>
 
-<div class="row">
+        <button id="addDataBtn" class="add-data-btn">+ Adicionar Dados</button>
 
-<div class="col">
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Inserir Novos Dados</h2>
+                <form id="dataForm">
+                    <div class="form-group">
+                        <label for="mes">Mês:</label>
+                        <select id="mes" required>
+                            <option value="JANEIRO">Janeiro</option>
+                            <option value="FEVEREIRO">Fevereiro</option>
+                            <option value="MARÇO">Março</option>
+                            <option value="ABRIL">Abril</option>
+                            <option value="MAIO">Maio</option>
+                            <option value="JUNHO" selected>Junho</option>
+                            <option value="JULHO">Julho</option>
+                            <option value="AGOSTO">Agosto</option>
+                            <option value="SETEMBRO">Setembro</option>
+                            <option value="OUTUBRO">Outubro</option>
+                            <option value="NOVEMBRO">Novembro</option>
+                            <option value="DEZEMBRO">Dezembro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="filial">Filial:</label>
+                        <select id="filial" required>
+                            <option value="">Selecione uma filial...</option>
+                            <option value="ATM">ATM - Altamira</option>
+                            <option value="APL">APL - Anápolis</option>
+                            <option value="GYL">GYL - Goiânia</option>
+                            <option value="PPY">PPY - Pouso Alegre</option>
+                            <option value="APS">APS - Anápolis</option>
+                            <option value="BSB">BSB - Brasília</option>
+                            <option value="VIX">VIX - Serra</option>
+                            <option value="DCX">DCX - Rio de Janeiro</option>
+                            <option value="SPO">SPO - Guarulhos</option>
+                            <option value="GYN">GYN - Goiânia</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cidade">Cidade:</label>
+                        <input type="text" id="cidade" readonly style="background-color: #f5f5f5; cursor: not-allowed;">
+                    </div>
+                    <div class="form-group">
+                        <label for="uf">Estado (UF):</label>
+                        <input type="text" id="uf" readonly style="background-color: #f5f5f5; cursor: not-allowed;">
+                    </div>
+                    <div class="form-group">
+                        <label for="cte">CT-e:</label>
+                        <input type="number" id="cte" required min="0" step="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="peso">Peso (Kg):</label>
+                        <input type="number" id="peso" required min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="mercadoria">Mercadoria (R$):</label>
+                        <input type="number" id="mercadoria" required min="0" step="0.01">
+                    </div>
+                    <div class="form-group">
+                        <label for="frete">Frete (R$):</label>
+                        <input type="number" id="frete" required min="0" step="0.01">
+                    </div>
+                    <button type="submit" class="submit-btn">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<div class="card">
+    <script>
+        const ctx = document.getElementById('freteChart').getContext('2d');
+        
+        const data = {
+            labels: ['ATM', 'APL', 'GYL', 'PPY', 'APS', 'BSB', 'VIX', 'DCX', 'SPO', 'GYN'],
+            datasets: [{
+                label: 'Frete (R$)',
+                data: [321611.15, 106532.25, 24762.89, 110500.00, 100200.64, 124880.87, 1035916.14, 1591608.42, 4685074.10, 2684764.97],
+                backgroundColor: [
+                    'rgba(102, 126, 234, 0.8)',
+                    'rgba(118, 75, 162, 0.8)',
+                    'rgba(102, 126, 234, 0.8)',
+                    'rgba(118, 75, 162, 0.8)',
+                    'rgba(102, 126, 234, 0.8)',
+                    'rgba(118, 75, 162, 0.8)',
+                    'rgba(102, 126, 234, 0.8)',
+                    'rgba(118, 75, 162, 0.8)',
+                    'rgba(102, 126, 234, 0.8)',
+                    'rgba(118, 75, 162, 0.8)'
+                ],
+                borderColor: [
+                    'rgba(102, 126, 234, 1)',
+                    'rgba(118, 75, 162, 1)',
+                    'rgba(102, 126, 234, 1)',
+                    'rgba(118, 75, 162, 1)',
+                    'rgba(102, 126, 234, 1)',
+                    'rgba(118, 75, 162, 1)',
+                    'rgba(102, 126, 234, 1)',
+                    'rgba(118, 75, 162, 1)',
+                    'rgba(102, 126, 234, 1)',
+                    'rgba(118, 75, 162, 1)'
+                ],
+                borderWidth: 2,
+                borderRadius: 8
+            }]
+        };
 
-<div class="card-body">
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let value = context.parsed.y;
+                                return 'Frete: R$ ' + value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return 'R$ ' + (value / 1000000).toFixed(1) + 'M';
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        };
 
-<h4>Total CT-e</h4>
+        const chart = new Chart(ctx, config);
 
-<h2>{{total_cte}}</h2>
+        // Filial data from JSON
+        const filialData = {
+            'ATM': { cidade: 'ALTAMIRA', uf: 'PA' },
+            'APL': { cidade: 'ANAPOLIS', uf: 'GO' },
+            'GYL': { cidade: 'GOIANIA', uf: 'GO' },
+            'PPY': { cidade: 'POUSO ALEGRE', uf: 'MG' },
+            'APS': { cidade: 'ANAPOLIS', uf: 'GO' },
+            'BSB': { cidade: 'BRASILIA', uf: 'DF' },
+            'VIX': { cidade: 'SERRA', uf: 'ES' },
+            'DCX': { cidade: 'RIO DE JANEIRO', uf: 'RJ' },
+            'SPO': { cidade: 'GUARULHOS', uf: 'SP' },
+            'GYN': { cidade: 'GOIANIA', uf: 'GO' }
+        };
 
-</div>
+        // Auto-fill cidade and uf when filial is selected
+        document.getElementById('filial').addEventListener('change', function() {
+            const filial = this.value;
+            const cidadeInput = document.getElementById('cidade');
+            const ufInput = document.getElementById('uf');
+            
+            if (filial && filialData[filial]) {
+                cidadeInput.value = filialData[filial].cidade;
+                ufInput.value = filialData[filial].uf;
+            } else {
+                cidadeInput.value = '';
+                ufInput.value = '';
+            }
+        });
 
-</div>
+        // Modal functionality
+        const modal = document.getElementById('modal');
+        const addDataBtn = document.getElementById('addDataBtn');
+        const closeBtn = document.querySelector('.close');
+        const dataForm = document.getElementById('dataForm');
 
-</div>
+        addDataBtn.onclick = function() {
+            modal.style.display = 'block';
+        }
 
-<div class="col">
+        closeBtn.onclick = function() {
+            modal.style.display = 'none';
+        }
 
-<div class="card">
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
 
-<div class="card-body">
+        dataForm.onsubmit = function(e) {
+            e.preventDefault();
+            
+            const mes = document.getElementById('mes').value;
+            const filial = document.getElementById('filial').value;
+            const cte = parseFloat(document.getElementById('cte').value);
+            const peso = parseFloat(document.getElementById('peso').value);
+            const mercadoria = parseFloat(document.getElementById('mercadoria').value);
+            const frete = parseFloat(document.getElementById('frete').value);
 
-<h4>Frete</h4>
+            // Update KPIs
+            const cteElement = document.querySelector('.kpi-card:nth-child(1) .value');
+            const freteElement = document.querySelector('.kpi-card:nth-child(2) .value');
+            const pesoElement = document.querySelector('.kpi-card:nth-child(3) .value');
+            const mercadoriaElement = document.querySelector('.kpi-card:nth-child(4) .value');
 
-<h2>R$ {{'{:,.2f}'.format(total_frete)}}</h2>
+            const currentCte = parseFloat(cteElement.textContent.replace('.', ''));
+            const currentFrete = parseFloat(freteElement.textContent.replace(/[R$\s.]/g, '').replace(',', '.'));
+            const currentPeso = parseFloat(pesoElement.textContent.replace(/[Kg\s.]/g, '').replace(',', '.'));
+            const currentMercadoria = parseFloat(mercadoriaElement.textContent.replace(/[R$\s.]/g, '').replace(',', '.'));
 
-</div>
+            cteElement.textContent = (currentCte + cte).toLocaleString('pt-BR');
+            freteElement.textContent = 'R$ ' + (currentFrete + frete).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            pesoElement.textContent = (currentPeso + peso).toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + ' Kg';
+            mercadoriaElement.textContent = 'R$ ' + (currentMercadoria + mercadoria).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-</div>
+            // Update chart if it's the same month
+            if (mes === 'JUNHO') {
+                const filialIndex = data.labels.indexOf(filial);
+                if (filialIndex !== -1) {
+                    data.datasets[0].data[filialIndex] += frete;
+                    chart.update();
+                }
+            }
 
-</div>
-
-<div class="col">
-
-<div class="card">
-
-<div class="card-body">
-
-<h4>Peso</h4>
-
-<h2>{{'{:,.0f}'.format(total_peso)}} Kg</h2>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col">
-
-<div class="card">
-
-<div class="card-body">
-
-<h4>Mercadoria</h4>
-
-<h2>R$ {{'{:,.2f}'.format(total_mercadoria)}}</h2>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<hr>
-
-{{ grafico|safe }}
-
-{% endblock %}
+            // Reset form and close modal
+            dataForm.reset();
+            modal.style.display = 'none';
+            
+            alert('Dados adicionados com sucesso!');
+        }
+    </script>
+</body>
+</html>
