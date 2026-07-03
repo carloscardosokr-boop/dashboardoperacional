@@ -1,0 +1,13 @@
+{
+  "ATM": {"cidade": "ALTAMIRA", "uf": "PA", "tipo": "FILIAL"},
+  "APL": {"cidade": "ANAPOLIS", "uf": "GO", "tipo": "FILIAL"},
+  "GYL": {"cidade": "GOIANIA", "uf": "GO", "tipo": "FILIAL"},
+  "MAB": {"cidade": "MARABA", "uf": "PA", "tipo": "TERCEIRO"},
+  "PPY": {"cidade": "POUSO ALEGRE", "uf": "MG", "tipo": "FILIAL"},
+  "APS": {"cidade": "ANAPOLIS", "uf": "GO", "tipo": "FILIAL"},
+  "BSB": {"cidade": "BRASILIA", "uf": "DF", "tipo": "FILIAL"},
+  "VIX": {"cidade": "SERRA", "uf": "ES", "tipo": "FILIAL"},
+  "DCX": {"cidade": "RIO DE JANEIRO", "uf": "RJ", "tipo": "FILIAL"},
+  "SPO": {"cidade": "GUARULHOS", "uf": "SP", "tipo": "FILIAL"},
+  "GYN": {"cidade": "GOIANIA", "uf": "GO", "tipo": "FILIAL"}
+}

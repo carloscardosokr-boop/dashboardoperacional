@@ -1,0 +1,92 @@
+body {
+    background: #eceff1;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, .15);
+    margin-bottom: 20px;
+}
+
+table {
+    background: white;
+}
+
+..dashboard-filter-box {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    padding: 0;
+    z-index: 1050;
+    transition: max-height 0.25s ease, opacity 0.25s ease;
+}
+
+.dashboard-filter-box.collapsed {
+    max-height: 56px;
+    overflow: hidden;
+}
+
+.dashboard-filter-box .filter-header {
+    cursor: grab;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e9ecef;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.dashboard-filter-box .filter-header:active {
+    cursor: grabbing;
+}
+
+.dashboard-filter-box .filter-body {
+    padding: 16px;
+}
+
+.dashboard-filter-box .filter-label,
+.dashboard-filter-box .form-label {
+    font-weight: 600;
+}
+
+.dashboard-filter-box .form-text {
+    margin-top: 0.5rem;
+}
+
+.dashboard-filter-box .month-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+
+.dashboard-filter-box .form-check {
+    margin-bottom: 0.4rem;
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+    text-align: center;
+}
+
+.dashboard-filter-box .form-check-label {
+    margin-left: 0.25rem;
+}
+
+.dashboard-filter-box .toggle-button {
+    min-width: 90px;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}

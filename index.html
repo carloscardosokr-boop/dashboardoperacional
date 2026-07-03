@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h2>Novo Registro</h2>
+
+<form action="/salvar" method="post">
+
+<div class="row">
+
+<div class="col">
+
+<input class="form-control" name="mes" placeholder="Mês">
+
+</div>
+
+<div class="col">
+
+<input class="form-control" name="filial" placeholder="Filial">
+
+</div>
+
+</div>
+
+<br>
+
+<div class="row">
+
+<div class="col">
+
+<input class="form-control" name="cte" placeholder="CT-e">
+
+</div>
+
+<div class="col">
+
+<input class="form-control" name="peso" placeholder="Peso">
+
+</div>
+
+</div>
+
+<br>
+
+<div class="row">
+
+<div class="col">
+
+<input class="form-control" name="mercadoria" placeholder="Mercadoria">
+
+</div>
+
+<div class="col">
+
+<input class="form-control" name="frete" placeholder="Frete">
+
+</div>
+
+</div>
+
+<br>
+
+<button class="btn btn-success">
+
+Salvar
+
+</button>
+
+</form>
+
+<hr>
+
+<table class="table table-striped">
+
+<tr>
+
+<th>Mês</th>
+
+<th>Filial</th>
+
+<th>CTE</th>
+
+<th>Peso</th>
+
+<th>Mercadoria</th>
+
+<th>Frete</th>
+
+</tr>
+
+{% for r in registros %}
+
+<tr>
+
+<td>{{r.mes}}</td>
+
+<td>{{r.filial}}</td>
+
+<td>{{r.cte}}</td>
+
+<td>{{r.peso}}</td>
+
+<td>{{r.mercadoria}}</td>
+
+<td>{{r.frete}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<div class="row">
+
+<div class="col">
+
+<div class="card">
+
+<div class="card-body">
+
+<h4>Total CT-e</h4>
+
+<h2>{{total_cte}}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col">
+
+<div class="card">
+
+<div class="card-body">
+
+<h4>Frete</h4>
+
+<h2>R$ {{'{:,.2f}'.format(total_frete)}}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col">
+
+<div class="card">
+
+<div class="card-body">
+
+<h4>Peso</h4>
+
+<h2>{{'{:,.0f}'.format(total_peso)}} Kg</h2>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col">
+
+<div class="card">
+
+<div class="card-body">
+
+<h4>Mercadoria</h4>
+
+<h2>R$ {{'{:,.2f}'.format(total_mercadoria)}}</h2>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+{{ grafico|safe }}
+
+{% endblock %}
