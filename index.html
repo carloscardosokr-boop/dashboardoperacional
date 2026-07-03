@@ -722,17 +722,32 @@
 
         // Função para calcular totais a partir das filiais
         function calcularTotais(mes) {
-            const filiais = dadosPorMes[mes].filiais;
             let totalCte = 0;
             let totalFrete = 0;
             let totalPeso = 0;
             let totalMercadoria = 0;
 
-            for (const filial in filiais) {
-                totalCte += filiais[filial].cte;
-                totalFrete += filiais[filial].frete;
-                totalPeso += filiais[filial].peso;
-                totalMercadoria += filiais[filial].mercadoria;
+            if (mes === 'TODOS') {
+                // Somar todos os meses
+                for (const mesAtual in dadosPorMes) {
+                    if (mesAtual === 'TODOS') continue;
+                    const filiais = dadosPorMes[mesAtual].filiais;
+                    for (const filial in filiais) {
+                        totalCte += filiais[filial].cte;
+                        totalFrete += filiais[filial].frete;
+                        totalPeso += filiais[filial].peso;
+                        totalMercadoria += filiais[filial].mercadoria;
+                    }
+                }
+            } else {
+                // Somar apenas o mês selecionado
+                const filiais = dadosPorMes[mes].filiais;
+                for (const filial in filiais) {
+                    totalCte += filiais[filial].cte;
+                    totalFrete += filiais[filial].frete;
+                    totalPeso += filiais[filial].peso;
+                    totalMercadoria += filiais[filial].mercadoria;
+                }
             }
 
             return {
@@ -776,7 +791,6 @@
         function updateDashboard() {
             const mes = document.getElementById('filterMonth').value;
             const tipo = document.getElementById('filterType').value;
-            const dados = dadosPorMes[mes];
             
             // Calcular totais dinamicamente
             const totais = calcularTotais(mes);
@@ -809,7 +823,23 @@
             document.getElementById('chartSubtitle').textContent = tipoLabels[tipo] + ' por Filial - ' + mes;
 
             // Atualizar dados do gráfico
-            const chartData = data.labels.map(filial => dados.filiais[filial][tipo]);
+            let chartData;
+            if (mes === 'TODOS') {
+                // Somar dados de todos os meses por filial
+                chartData = data.labels.map(filial => {
+                    let total = 0;
+                    for (const mesAtual in dadosPorMes) {
+                        if (mesAtual === 'TODOS') continue;
+                        total += dadosPorMes[mesAtual].filiais[filial][tipo];
+                    }
+                    return total;
+                });
+            } else {
+                // Dados do mês selecionado
+                const dados = dadosPorMes[mes];
+                chartData = data.labels.map(filial => dados.filiais[filial][tipo]);
+            }
+            
             data.datasets[0].data = chartData;
             data.datasets[0].label = tipoLabels[tipo] + ' ' + tipoUnits[tipo];
 
