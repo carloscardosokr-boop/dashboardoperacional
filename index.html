@@ -359,12 +359,44 @@
         body.light-theme .close:hover {
             color: #333;
         }
+        .zoom-controls {
+            position: fixed;
+            top: 20px;
+            right: 80px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        .zoom-btn {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .zoom-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+        body.light-theme .zoom-btn {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
     </style>
 </head>
 <body>
     <button id="themeToggle" class="theme-toggle">
         <span class="icon">🌙</span>
     </button>
+    <div class="zoom-controls">
+        <button id="zoomOut" class="zoom-btn">-</button>
+        <button id="zoomIn" class="zoom-btn">+</button>
+    </div>
     <div class="container">
         <div class="header">
             <h1>Dashboard Logístico</h1>
@@ -855,6 +887,30 @@
             // Atualizar cor dos datalabels
             config.options.plugins.datalabels.color = isLight ? '#000000' : '#ffffff';
             chart.update();
+        });
+
+        // Zoom controls
+        let currentZoom = 100;
+        const container = document.querySelector('.container');
+        const zoomInBtn = document.getElementById('zoomIn');
+        const zoomOutBtn = document.getElementById('zoomOut');
+
+        zoomInBtn.addEventListener('click', function() {
+            if (currentZoom < 150) {
+                currentZoom += 10;
+                container.style.transform = `scale(${currentZoom / 100})`;
+                container.style.transformOrigin = 'top center';
+                container.style.transition = 'transform 0.3s ease';
+            }
+        });
+
+        zoomOutBtn.addEventListener('click', function() {
+            if (currentZoom > 50) {
+                currentZoom -= 10;
+                container.style.transform = `scale(${currentZoom / 100})`;
+                container.style.transformOrigin = 'top center';
+                container.style.transition = 'transform 0.3s ease';
+            }
         });
 
         // Modal functionality
