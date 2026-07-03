@@ -471,18 +471,7 @@
                     <div class="form-group">
                         <label for="mes">Mês:</label>
                         <select id="mes" required>
-                            <option value="JANEIRO">Janeiro</option>
-                            <option value="FEVEREIRO">Fevereiro</option>
-                            <option value="MARÇO">Março</option>
-                            <option value="ABRIL">Abril</option>
-                            <option value="MAIO">Maio</option>
-                            <option value="JUNHO" selected>Junho</option>
-                            <option value="JULHO">Julho</option>
-                            <option value="AGOSTO">Agosto</option>
-                            <option value="SETEMBRO">Setembro</option>
-                            <option value="OUTUBRO">Outubro</option>
-                            <option value="NOVEMBRO">Novembro</option>
-                            <option value="DEZEMBRO">Dezembro</option>
+                            <option value="">Selecione um mês...</option>
                         </select>
                         <style>
                             #mes option {
@@ -882,6 +871,31 @@
         // Carregar dados do JSON e inicializar dashboard
         async function inicializarDashboard() {
             dadosPorMes = await carregarDados();
+            
+            // Popular filtro de meses dinamicamente
+            const filterMonth = document.getElementById('filterMonth');
+            filterMonth.innerHTML = '<option value="TODOS" selected>TODOS</option>';
+            
+            // Popular select de mês no formulário dinamicamente
+            const mesSelect = document.getElementById('mes');
+            mesSelect.innerHTML = '<option value="">Selecione um mês...</option>';
+            
+            for (const mes in dadosPorMes) {
+                if (mes !== 'TODOS') {
+                    // Adicionar ao filtro
+                    const option = document.createElement('option');
+                    option.value = mes;
+                    option.textContent = mes;
+                    filterMonth.appendChild(option);
+                    
+                    // Adicionar ao formulário
+                    const formOption = document.createElement('option');
+                    formOption.value = mes;
+                    formOption.textContent = mes.charAt(0) + mes.slice(1).toLowerCase(); // Capitalizar primeira letra
+                    mesSelect.appendChild(formOption);
+                }
+            }
+            
             updateDashboard();
         }
 
