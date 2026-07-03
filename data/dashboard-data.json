@@ -1,0 +1,773 @@
+{
+    "dadosPorMes": {
+        "JANEIRO": {
+            "filiais": {
+                "ATM": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "PPY": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APS": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "BSB": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "VIX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "DCX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "SPO": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYN": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                }
+            }
+        },
+        "FEVEREIRO": {
+            "filiais": {
+                "ATM": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "PPY": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APS": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "BSB": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "VIX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "DCX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "SPO": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYN": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                }
+            }
+        },
+        "MARÇO": {
+            "filiais": {
+                "ATM": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "PPY": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APS": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "BSB": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "VIX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "DCX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "SPO": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYN": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                }
+            }
+        },
+        "ABRIL": {
+            "filiais": {
+                "ATM": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "PPY": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APS": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "BSB": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "VIX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "DCX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "SPO": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYN": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                }
+            }
+        },
+        "MAIO": {
+            "filiais": {
+                "ATM": {
+                    "frete": 392538.46,
+                    "peso": 184423,
+                    "mercadoria": 6204896.06,
+                    "cte": 1180
+                },
+                "APL": {
+                    "frete": 85546.51,
+                    "peso": 0,
+                    "mercadoria": 0.01,
+                    "cte": 1
+                },
+                "GYL": {
+                    "frete": 44296.1,
+                    "peso": 39335,
+                    "mercadoria": 1713669,
+                    "cte": 28
+                },
+                "PPY": {
+                    "frete": 521439.24,
+                    "peso": 497347,
+                    "mercadoria": 44401803.54,
+                    "cte": 62
+                },
+                "APS": {
+                    "frete": 154131.51,
+                    "peso": 103369,
+                    "mercadoria": 4663876.7,
+                    "cte": 106
+                },
+                "BSB": {
+                    "frete": 105915.05,
+                    "peso": 40212,
+                    "mercadoria": 1135217.75,
+                    "cte": 125
+                },
+                "VIX": {
+                    "frete": 607476.09,
+                    "peso": 794248,
+                    "mercadoria": 37526234.33,
+                    "cte": 402
+                },
+                "DCX": {
+                    "frete": 1501755.29,
+                    "peso": 1034062,
+                    "mercadoria": 37680820.03,
+                    "cte": 1505
+                },
+                "SPO": {
+                    "frete": 5493944.88,
+                    "peso": 6341598,
+                    "mercadoria": 161963961.06,
+                    "cte": 3895
+                },
+                "GYN": {
+                    "frete": 1746642.97,
+                    "peso": 10828144,
+                    "mercadoria": 74152748.17,
+                    "cte": 839
+                }
+            }
+        },
+        "JUNHO": {
+            "filiais": {
+                "ATM": {
+                    "frete": 321611.15,
+                    "peso": 151391,
+                    "mercadoria": 4812272.45,
+                    "cte": 1059
+                },
+                "APL": {
+                    "frete": 106532.25,
+                    "peso": 0,
+                    "mercadoria": 0.01,
+                    "cte": 1
+                },
+                "GYL": {
+                    "frete": 24762.89,
+                    "peso": 19367,
+                    "mercadoria": 915683.55,
+                    "cte": 22
+                },
+                "PPY": {
+                    "frete": 110500,
+                    "peso": 64659,
+                    "mercadoria": 8763020.63,
+                    "cte": 13
+                },
+                "APS": {
+                    "frete": 100200.64,
+                    "peso": 79394,
+                    "mercadoria": 2993657.14,
+                    "cte": 70
+                },
+                "BSB": {
+                    "frete": 124880.87,
+                    "peso": 51784,
+                    "mercadoria": 1367527.57,
+                    "cte": 191
+                },
+                "VIX": {
+                    "frete": 1035916.14,
+                    "peso": 1078921,
+                    "mercadoria": 39904912.81,
+                    "cte": 835
+                },
+                "DCX": {
+                    "frete": 1591608.42,
+                    "peso": 1127661,
+                    "mercadoria": 37124257.72,
+                    "cte": 1403
+                },
+                "SPO": {
+                    "frete": 4685074.1,
+                    "peso": 5700156,
+                    "mercadoria": 141832354.89,
+                    "cte": 3618
+                },
+                "GYN": {
+                    "frete": 2684764.97,
+                    "peso": 3448035,
+                    "mercadoria": 104188589.07,
+                    "cte": 1022
+                }
+            }
+        },
+        "JULHO": {
+            "filiais": {
+                "ATM": {
+                    "frete": 40588.82,
+                    "peso": 21287.0,
+                    "mercadoria": 710744.91,
+                    "cte": 133.0
+                },
+                "APL": {
+                    "frete": 115079.41,
+                    "peso": 0.0,
+                    "mercadoria": 0.02,
+                    "cte": 2.0
+                },
+                "GYL": {
+                    "frete": 7500.0,
+                    "peso": 0.0,
+                    "mercadoria": 0.01,
+                    "cte": 1.0
+                },
+                "PPY": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APS": {
+                    "frete": 2577.76,
+                    "peso": 814.0,
+                    "mercadoria": 9480.2,
+                    "cte": 3.0
+                },
+                "BSB": {
+                    "frete": 18006.93,
+                    "peso": 6071.0,
+                    "mercadoria": 131188.62,
+                    "cte": 14.0
+                },
+                "VIX": {
+                    "frete": 416265.81,
+                    "peso": 163355.0,
+                    "mercadoria": 42079798.57,
+                    "cte": 105.0
+                },
+                "DCX": {
+                    "frete": 194983.46,
+                    "peso": 136181.0,
+                    "mercadoria": 5599144.09,
+                    "cte": 188.0
+                },
+                "SPO": {
+                    "frete": 409869.79,
+                    "peso": 381329.0,
+                    "mercadoria": 10043765.09,
+                    "cte": 323.0
+                },
+                "GYN": {
+                    "frete": 275332.32,
+                    "peso": 250121.0,
+                    "mercadoria": 6624533.77,
+                    "cte": 160.0
+                }
+            }
+        },
+        "AGOSTO": {
+            "filiais": {
+                "ATM": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "PPY": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APS": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "BSB": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "VIX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "DCX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "SPO": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYN": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                }
+            }
+        },
+        "SETEMBRO": {
+            "filiais": {
+                "ATM": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "PPY": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APS": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "BSB": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "VIX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "DCX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "SPO": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYN": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                }
+            }
+        },
+        "OUTUBRO": {
+            "filiais": {
+                "ATM": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "PPY": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APS": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "BSB": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "VIX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "DCX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "SPO": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYN": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                }
+            }
+        },
+        "NOVEMBRO": {
+            "filiais": {
+                "ATM": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "PPY": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APS": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "BSB": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "VIX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "DCX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "SPO": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYN": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                }
+            }
+        },
+        "DEZEMBRO": {
+            "filiais": {
+                "ATM": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYL": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "PPY": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "APS": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "BSB": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "VIX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "DCX": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "SPO": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                },
+                "GYN": {
+                    "frete": 0,
+                    "peso": 0,
+                    "mercadoria": 0,
+                    "cte": 0
+                }
+            }
+        }
+    },
+    "ultima_atualizacao": "2026-07-03 17:18:38"
+}

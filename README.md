@@ -155,6 +155,61 @@ Para que o dashboard no GitHub Pages use os dados do servidor local, você preci
 - O dashboard no GitHub Pages mostrará os dados do último commit
 - Para atualizar o dashboard no GitHub Pages, o servidor local precisa fazer push dos dados
 
+## 🖥️ Gerenciador de Dados por CLI
+
+Alternativamente ao servidor web, você pode usar o gerenciador de dados por linha de comando para gerenciar os dados diretamente:
+
+### Usar o Gerenciador de Dados
+
+No diretório do projeto, execute:
+```bash
+python data_manager.py
+```
+
+### Funcionalidades do Gerenciador
+
+1. **Listar dados:** Visualize todos os dados ou filtre por mês/filial
+2. **Adicionar valor:** Adicione valores a uma filial específica em um mês
+3. **Alterar valor:** Altere o valor existente de uma filial em um mês
+4. **Deletar valor:** Zere o valor de uma filial em um mês
+5. **Commit e Push:** Faça automaticamente `git add`, `git commit` e `git push` para o GitHub
+
+### Exemplo de Uso
+
+```
+1. Listar dados
+   - Mês: JUNHO
+   - Filial: ATM
+
+2. Adicionar valor
+   - Mês: JUNHO
+   - Filial: ATM
+   - Tipo: frete
+   - Valor: 10000
+
+5. Fazer commit e push para o GitHub
+```
+
+### Filiais Disponíveis
+
+- ATM - Altamira
+- APL - Anápolis
+- GYL - Goiânia
+- PPY - Pouso Alegre
+- APS - Anápolis
+- BSB - Brasília
+- VIX - Serra
+- DCX - Rio de Janeiro
+- SPO - Guarulhos
+- GYN - Goiânia
+
+### Tipos de Dados
+
+- frete (em R$)
+- peso (em kg)
+- mercadoria (em R$)
+- cte (quantidade)
+
 ## 🤝 Suporte
 
 Para problemas ou dúvidas, verifique a documentação do:
